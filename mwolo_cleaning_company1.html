@@ -1,0 +1,2567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MWOLO CLEANING COMPANY - Professional Cleaning Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --light-blue: #3b82f6;
+            --primary-green: #16a34a;
+            --light-green: #22c55e;
+            --dark-blue: #1e40af;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --dark-gray: #64748b;
+            --text-dark: #1e293b;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            --gradient-secondary: linear-gradient(45deg, var(--light-blue) 0%, var(--light-green) 100%);
+            --gradient-glow: linear-gradient(45deg, #4f46e5, #06b6d4, #10b981);
+            --glassmorphism: rgba(255, 255, 255, 0.1);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 0 30px rgba(37, 99, 235, 0.3);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Cursor trail effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), transparent 0%, transparent 90%, rgba(37, 99, 235, 0.02) 100%);
+            pointer-events: none;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced Header Styles */
+        header {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(22, 163, 74, 0.95));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Enhanced Logo with 3D effect */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover::after {
+            opacity: 1;
+        }
+
+        .logo:hover {
+            transform: translateY(-8px) scale(1.05);
+            filter: drop-shadow(0 10px 25px rgba(0,0,0,0.3));
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            padding: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo img::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .logo:hover img {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #f0f9ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .logo .motto {
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.9;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .motto {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        /* Enhanced Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--light-green), var(--primary-blue));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::before {
+            left: 100%;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Enhanced Buttons */
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover::after {
+            width: 200px;
+            height: 200px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white;
+            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(22, 163, 74, 0.4);
+            background: linear-gradient(135deg, var(--light-green), var(--primary-green));
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 90px;
+        }
+
+        .section {
+            padding: 4rem 0;
+            display: none;
+            position: relative;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(22, 163, 74, 0.85)), 
+                        url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 10rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path d="M0,100 C150,50 350,150 500,100 C650,50 850,150 1000,100 L1000,200 L0,200 Z" fill="rgba(255,255,255,0.1)"/></svg>') repeat-x;
+            animation: wave 15s linear infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-1000px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.1; transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #fff, #f0f9ff, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s both;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .newsletter::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grain" width="100" height="20" patternUnits="userSpaceOnUse"><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="20" fill="url(%23grain)"/></svg>');
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        .newsletter h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(45deg, #fff, #f0f9ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .newsletter p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 60px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            background: white;
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(255,255,255,0.5);
+        }
+
+        .newsletter-form input::placeholder {
+            color: var(--dark-gray);
+            opacity: 0.7;
+        }
+
+        .newsletter-form .btn {
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white;
+            border-radius: 30px;
+            padding: 1.2rem 2.5rem;
+            white-space: nowrap;
+            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.4);
+            font-weight: 600;
+        }
+
+        .newsletter-form .btn:hover {
+            background: linear-gradient(135deg, var(--light-green), var(--primary-green));
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(22, 163, 74, 0.5);
+        }
+
+        /* Enhanced Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient-primary);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(37, 99, 235, 0.15);
+        }
+
+        .service-card i {
+            font-size: 4rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card:hover i {
+            color: var(--primary-green);
+            transform: scale(1.2) rotate(5deg);
+            filter: drop-shadow(0 5px 15px rgba(22, 163, 74, 0.3));
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card:hover h3 {
+            color: var(--primary-green);
+            transform: translateY(-5px);
+        }
+
+        .service-card p {
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover p {
+            transform: translateY(-3px);
+        }
+
+        /* Enhanced Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+            height: 400px;
+            border: 2px solid transparent;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(22, 163, 74, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 30px 70px rgba(37, 99, 235, 0.2);
+            border-color: var(--primary-blue);
+        }
+
+        .gallery-item:nth-child(even):hover {
+            transform: translateY(-20px) scale(1.03) rotate(1deg);
+        }
+
+        .gallery-item:nth-child(odd):hover {
+            transform: translateY(-20px) scale(1.03) rotate(-1deg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: all 0.6s ease;
+            filter: brightness(0.9) saturate(1.1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+            filter: brightness(1.1) saturate(1.3);
+        }
+
+        .gallery-content {
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, rgba(37, 99, 235, 0.02) 100%);
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-content::before {
+            transform: scaleX(1);
+        }
+
+        .gallery-content h4 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-content h4 {
+            color: var(--primary-green);
+            transform: translateX(10px);
+        }
+
+        .gallery-content p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-content p {
+            color: var(--text-dark);
+            transform: translateX(5px);
+        }
+
+        /* Enhanced gallery placeholder */
+        .gallery-placeholder-image {
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            color: white;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-placeholder-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .gallery-placeholder-image:hover {
+            background: var(--gradient-secondary);
+        }
+
+        .gallery-placeholder-image i {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-placeholder-image h4,
+        .gallery-placeholder-image p,
+        .gallery-placeholder-image small {
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-placeholder-image h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .gallery-placeholder-image p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .gallery-placeholder-image small {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            background: rgba(255,255,255,0.2);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Enhanced Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            background: rgba(248, 250, 252, 0.5);
+            position: relative;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: white;
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group input:focus + label,
+        .form-group select:focus + label,
+        .form-group textarea:focus + label {
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95));
+            margin: 2% auto;
+            padding: 3rem;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            max-height: 95vh;
+            overflow-y: auto;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-content.large {
+            max-width: 800px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            transition: all 0.4s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .close:hover {
+            color: var(--primary-blue);
+            transform: scale(1.2) rotate(90deg);
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Enhanced Social Media */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, white, #f8fafc);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            font-size: 1.5rem;
+        }
+
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .social-links a:hover::before {
+            transform: scale(1);
+        }
+
+        .social-links a:hover {
+            color: white;
+            transform: translateY(-10px) scale(1.15);
+            box-shadow: 0 15px 40px rgba(22, 163, 74, 0.3);
+        }
+
+        .social-links a i {
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Enhanced Admin Styles */
+        .admin-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .admin-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="admin-grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(37,99,235,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23admin-grid)"/></svg>');
+        }
+
+        .admin-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admin-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        .admin-panel {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-sidebar {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95));
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            height: fit-content;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .admin-sidebar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1);
+        }
+
+        .admin-sidebar ul {
+            list-style: none;
+        }
+
+        .admin-sidebar li {
+            margin-bottom: 0.8rem;
+        }
+
+        .admin-sidebar a {
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admin-sidebar a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .admin-sidebar a::after {
+            content: '';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .admin-sidebar a:hover::before,
+        .admin-sidebar a.active::before {
+            left: 0;
+        }
+
+        .admin-sidebar a:hover::after,
+        .admin-sidebar a.active::after {
+            width: 20px;
+        }
+
+        .admin-sidebar a:hover,
+        .admin-sidebar a.active {
+            color: white;
+            transform: translateX(10px) scale(1.02);
+        }
+
+        .admin-sidebar a i {
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .admin-sidebar a:hover i,
+        .admin-sidebar a.active i {
+            transform: scale(1.1);
+        }
+
+        .admin-content {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95));
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            min-height: 600px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .admin-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1);
+        }
+
+        .admin-panel-content {
+            display: none;
+        }
+
+        .admin-panel-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-green) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 8s linear infinite;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3);
+        }
+
+        .stat-card h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Success/Error Messages */
+        .alert {
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            animation: slideIn 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .alert-success {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.05));
+            color: var(--primary-green);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        .alert-error {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
+            color: #dc2626;
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { 
+                transform: translateX(100%); 
+                opacity: 0; 
+            }
+            to { 
+                transform: translateX(0); 
+                opacity: 1; 
+            }
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #0f172a 100%);
+            color: white;
+            padding: 4rem 0 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-pattern" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-pattern)"/></svg>');
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-section {
+            transition: all 0.3s ease;
+        }
+
+        .footer-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-section h3 {
+            color: var(--light-green);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li:hover {
+            transform: translateX(10px);
+        }
+
+        .footer-section ul li a {
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--light-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: var(--dark-gray);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Admin Access Button - Floating */
+        .admin-access-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .admin-access-btn:hover {
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+            background: var(--gradient-secondary);
+        }
+
+        .admin-access-btn i {
+            transition: all 0.3s ease;
+        }
+
+        .admin-access-btn:hover i {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                max-width: 400px;
+            }
+
+            .newsletter h2 {
+                font-size: 2.2rem;
+            }
+
+            .admin-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links a {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+
+            .admin-access-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(248, 250, 252, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gradient-secondary);
+        }
+
+        /* Additional hover effects for interactive elements */
+        .company-image-container:hover {
+            transform: scale(1.02) !important;
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15) !important;
+        }
+
+        /* Enhanced button hover for forms */
+        .form-group button[type="submit"]:hover,
+        .contact-form button[type="submit"]:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(22, 163, 74, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+         <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./image/logo.png" alt="MWOLO CLEANING COMPANY Logo" id="company-logo">
+                    <div>
+                        <h1>MWOLO CLEANING</h1>
+                        <div class="motto">HAPPY SPACES, HAPPY FACES</div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a onclick="showSection('home')">Home</a></li>
+                        <li><a onclick="showSection('about')">About</a></li>
+                        <li><a onclick="showSection('services')">Services</a></li>
+                        <li><a onclick="showSection('gallery')">Gallery</a></li>
+                        <li><a onclick="showSection('testimonials')">Testimonials</a></li>
+                        <li><a onclick="showSection('contact')">Contact</a></li>
+                        <li><a onclick="showSection('admin')">Admin</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-secondary" onclick="openModal('signin-modal')">Sign In</a>
+                    <a href="#" class="btn btn-primary" onclick="openModal('signup-modal')">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <h1>Professional Cleaning Services</h1>
+                    <p>Leading provider of eco-friendly cleaning solutions committed to sustainable practices</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary" onclick="showSection('services')">Our Services</a>
+                        <a href="#" class="btn btn-secondary" onclick="showSection('contact')">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="newsletter">
+                <div class="container">
+                    <h2>Stay Updated with Our Newsletter</h2>
+                    <p>Get the latest news about our services and eco-friendly cleaning tips</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" id="newsletter-email">
+                        <button class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary-blue);">About MWOLO CLEANING COMPANY</h2>
+
+              
+                
+                <!-- Welcome Message -->
+                <div style="text-align: center; margin-bottom: 4rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(22, 163, 74, 0.05) 100%); padding: 3rem; border-radius: 20px; border: 1px solid rgba(37, 99, 235, 0.1);">
+                    <h3 style="color: var(--primary-green); font-size: 2rem; margin-bottom: 1.5rem; font-weight: 600;">Welcome to MWOLO Cleaning Company</h3>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-dark); max-width: 800px; margin: 0 auto;">
+                        We are delighted to have you explore our services and discover how we can transform your spaces into pristine, healthy environments. 
+                        With a commitment to excellence and environmental sustainability, MWOLO Cleaning Company has been serving the community with 
+                        professional cleaning solutions that prioritize both quality results and eco-friendly practices. 
+                        <strong style="color: var(--primary-blue);">Welcome to a world where cleanliness meets sustainability!</strong>
+                    </p>
+                </div>
+               
+
+                <!-- Company Image Section -->
+                <div style="text-align: center; margin-bottom: 4rem;">
+                <h3 style="color: var(--primary-green); margin-bottom: 2rem;">Our Company</h3>
+                <div class="company-image-container"
+         style="max-width: 600px; margin: 0 auto; background: #fff; 
+                border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+                padding: 20px; transition: transform 0.3s ease;">
+        
+        <img src="image/post.png" 
+             alt="MWOLO CLEANING COMPANY" 
+             id="company-image-display" 
+             style="width: 100%; height: auto; border-radius: 12px;">
+        
+        <p style="margin-top: 1rem; font-size: 16px; color: #555;">
+            At MWOLO Cleaning Company, we pride ourselves in delivering 
+            professional cleaning services that leave your spaces spotless 
+            and welcoming.
+        </p>
+    </div>
+</div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--primary-green); margin-bottom: 1rem;">Our Vision</h3>
+                        <p>"To be a leading provider of eco-friendly cleaning solutions, committed to sustainable practices that enhance the well-being of our clients, our community, and the environment."</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--primary-green); margin-bottom: 1rem;">Our Mission</h3>
+                        <p>"To deliver exceptional and diverse cleaning services through continuous innovation, compliance, and community sensitization. We promote the principles of reuse, replace, and recycle to protect and preserve the environment for future generations."</p>
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center;">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Our Location</h3>
+                    <p><strong>Address:</strong> C/O Panuna Trading Center, Soni Sub-county</p>
+                    <p><strong>P.O Box:</strong> 300471, Soni Sub-county, Tororo District</p>
+                    <p><strong>Phone:</strong> 0787184507 / 0757638698 / 0763461020</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary-blue);">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card" onclick="showServiceDetails('Waste Management')">
+                        <i class="fas fa-trash-alt"></i>
+                        <h3>Waste Management</h3>
+                        <p>Professional waste collection, sorting, and disposal services following environmental guidelines.</p>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetails('General Janitorial')">
+                        <i class="fas fa-broom"></i>
+                        <h3>General Janitorial</h3>
+                        <p>Complete cleaning solutions for offices, buildings, and commercial spaces.</p>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetails('Lawn Care')">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Lawn Care</h3>
+                        <p>Professional landscaping and lawn maintenance services for beautiful outdoor spaces.</p>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetails('Fumigation')">
+                        <i class="fas fa-bug"></i>
+                        <h3>Fumigation</h3>
+                        <p>Safe and effective pest control solutions for residential and commercial properties.</p>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetails('General Supply')">
+                        <i class="fas fa-boxes"></i>
+                        <h3>General Supply</h3>
+                        <p>Supply of cleaning materials, equipment, and maintenance products.</p>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetails('Compound Maintenance')">
+                        <i class="fas fa-tools"></i>
+                        <h3>Compound Maintenance</h3>
+                        <p>Complete maintenance services for residential and commercial compounds.</p>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetails('General Consultancy')">
+                        <i class="fas fa-handshake"></i>
+                        <h3>General Consultancy</h3>
+                        <p>Expert advice on cleaning protocols, environmental compliance, and maintenance strategies.</p>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetails('Computer Services')">
+                        <i class="fas fa-laptop"></i>
+                        <h3>Computer Services</h3>
+                        <p>IT support, computer maintenance, and technology consulting services.</p>
+                    </div>
+                    
+                    <div class="service-card" onclick="showServiceDetails('Labour Management')">
+                        <i class="fas fa-users"></i>
+                        <h3>Labour Management</h3>
+                        <p>Professional workforce management and staffing solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+          <section id="gallery" class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary-blue);">Our Work Gallery</h2>
+                <div class="gallery-grid" id="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./image/clean.jpg" alt="Office Cleaning">
+                        <div class="gallery-content">
+                            <h4>Office Cleaning</h4>
+                            <p>Professional office cleaning services for a productive work environment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="./image/spray.jpg" alt="Eco-Friendly Products">
+                        <div class="gallery-content">
+                            <h4>Eco-Friendly Products</h4>
+                            <p>Sustainable cleaning solutions that protect our environment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="./image/Team.jpg" alt="Professional Team">
+                        <div class="gallery-content">
+                            <h4>Professional Team</h4>
+                            <p>Our experienced and dedicated cleaning crew in action</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="./image/tools.jpg" alt="Equipment & Tools">
+                        <div class="gallery-content">
+                            <h4>Equipment & Tools</h4>
+                            <p>Modern cleaning equipment for efficient and thorough results</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="./image/cut.jpg" alt="Landscaping Work">
+                        <div class="gallery-content">
+                            <h4>Landscaping Work</h4>
+                            <p>Beautiful lawn care and landscaping transformation results</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="./image/pro.jpg" alt="Commercial Projects">
+                        <div class="gallery-content">
+                            <h4>Commercial Projects</h4>
+                            <p>Large scale cleaning projects for commercial facilities</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn btn-primary" onclick="addMoreGalleryItems()">Add More Images</button>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary-blue);">Client Testimonials</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center;">
+                        <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 1rem;"></i>
+                        <p style="font-style: italic; margin-bottom: 1rem;">"MWOLO Cleaning Company transformed our office space. Their eco-friendly approach and professional service exceeded our expectations."</p>
+                        <div style="color: var(--primary-blue); font-weight: bold;">- Sarah Nekesa</div>
+                        <div style="color: var(--dark-gray);">Office Manager</div>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center;">
+                        <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 1rem;"></i>
+                        <p style="font-style: italic; margin-bottom: 1rem;">"Reliable, efficient, and environmentally conscious. MWOLO is our go-to cleaning service provider."</p>
+                        <div style="color: var(--primary-blue); font-weight: bold;">- Esther Taaka</div>
+                        <div style="color: var(--dark-gray);">Business Owner</div>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center;">
+                        <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--primary-green); margin-bottom: 1rem;"></i>
+                        <p style="font-style: italic; margin-bottom: 1rem;">"Their computer services and general consultancy helped streamline our operations. Highly recommended!"</p>
+                        <div style="color: var(--primary-blue); font-weight: bold;">- Grace Namutebi</div>
+                        <div style="color: var(--dark-gray);">Hotel Manager</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem; color: var(--primary-blue);">Contact Us</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+                    <div>
+                        <h3 style="color: var(--primary-green); margin-bottom: 2rem;">Get in Touch</h3>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--primary-blue); margin-right: 10px;"></i>
+                            <strong>Address:</strong> C/O Panuna Trading Center, Soni Sub-county, Tororo District
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <i class="fas fa-envelope" style="color: var(--primary-blue); margin-right: 10px;"></i>
+                            <strong>P.O Box:</strong> 300471, Soni Sub-county
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <i class="fas fa-phone" style="color: var(--primary-blue); margin-right: 10px;"></i>
+                            <strong>Phone:</strong> 0787184507 / 0757638698 / 0763461020
+                        </div>
+                        
+                        <div class="social-links" style="justify-content: flex-start;">
+                            <a href="https://wa.me/256787184507" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://instagram.com/mwolo_cleaning" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/mwolo_cleaning" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://facebook.com/mwolo.cleaning.company" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3 style="color: var(--primary-green); margin-bottom: 1rem;">Send us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="contact-name">Full Name</label>
+                                <input type="text" id="contact-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-service">Service Needed</label>
+                                <select id="contact-service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="waste-management">Waste Management</option>
+                                    <option value="general-janitorial">General Janitorial</option>
+                                    <option value="lawn-care">Lawn Care</option>
+                                    <option value="fumigation">Fumigation</option>
+                                    <option value="general-supply">General Supply</option>
+                                    <option value="compound-maintenance">Compound Maintenance</option>
+                                    <option value="general-consultancy">General Consultancy</option>
+                                    <option value="computer-services">Computer Services</option>
+                                    <option value="labour-management">Labour Management</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Admin Section -->
+        <section id="admin" class="section admin-section">
+            <div class="admin-header">
+                <div class="container">
+                    <h1><i class="fas fa-cog"></i> Admin Dashboard</h1>
+                    <p>Welcome to MWOLO Dashboard</p>
+                </div>
+            </div>
+            <div class="container">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 id="total-users">0</h3>
+                        <p>Total Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="total-subscribers">0</h3>
+                        <p>Newsletter Subscribers</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="total-gallery-images">6</h3>
+                        <p>Gallery Images</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="total-messages">0</h3>
+                        <p>Contact Messages</p>
+                    </div>
+                </div>
+
+                <div class="admin-panel">
+                    <div class="admin-sidebar">
+                        <ul>
+                            <li><a href="#" onclick="showAdminPanel('user-management')" class="active"><i class="fas fa-users"></i> User Management</a></li>
+                            <li><a href="#" onclick="showAdminPanel('gallery-manager')"><i class="fas fa-images"></i> Gallery Manager</a></li>
+                            <li><a href="#" onclick="showAdminPanel('messages-manager')"><i class="fas fa-envelope"></i> Messages</a></li>
+                        </ul>
+                    </div>
+                    <div class="admin-content">
+                        <!-- User Management Panel -->
+                        <div id="user-management" class="admin-panel-content active">
+                            <h3><i class="fas fa-users-cog"></i> User Management</h3>
+                            <p>Manage registered users and newsletter subscribers</p>
+                            
+                            <div style="margin: 2rem 0;">
+                                <h4 style="color: var(--primary-blue); margin-bottom: 1rem;">Registered Users</h4>
+                                <div id="users-list">
+                                    <p style="color: var(--dark-gray); font-style: italic;">No users registered yet.</p>
+                                </div>
+                            </div>
+
+                            <div style="margin: 2rem 0;">
+                                <h4 style="color: var(--primary-green); margin-bottom: 1rem;">Newsletter Subscribers</h4>
+                                <div id="subscribers-list">
+                                    <p style="color: var(--dark-gray); font-style: italic;">No subscribers yet.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Manager Panel -->
+                        <div id="gallery-manager" class="admin-panel-content" style="display: none;">
+                            <h3><i class="fas fa-images"></i> Gallery Manager</h3>
+                            <p>Manage gallery images (Demo mode - changes not persistent)</p>
+                            
+                            <div style="background: rgba(37, 99, 235, 0.1); padding: 1rem; border-radius: 10px; margin-bottom: 2rem; border-left: 4px solid var(--primary-blue);">
+                                <p><i class="fas fa-info-circle" style="color: var(--primary-blue); margin-right: 0.5rem;"></i>
+                                <strong>Admin Access Required:</strong> This is a demonstration of the admin panel. In a real implementation, this would require proper authentication.</p>
+                            </div>
+                        </div>
+
+                        <!-- Messages Manager Panel -->
+                        <div id="messages-manager" class="admin-panel-content" style="display: none;">
+                            <h3><i class="fas fa-envelope"></i> Contact Messages</h3>
+                            <p>View and manage contact form submissions</p>
+                            
+                            <div id="messages-list">
+                                <p style="color: var(--dark-gray); font-style: italic;">No messages received yet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Sign In Modal -->
+    <div id="signin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signin-modal')">&times;</span>
+            <h2 style="color: #27951d; margin-bottom: 0.5rem; text-align: center; font-size: 2rem; font-weight: 600;">Welcome Back</h2>
+            <p style="text-align: center; color: #64748b; margin-bottom: 2rem; font-size: 1rem;">Sign in to your account</p>
+            <form id="signin-form">
+                <div class="form-group">
+                    <label for="signin-email" style="color: #374151; font-weight: 500; margin-bottom: 0.5rem;">Email</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                        <input type="email" id="signin-email" required style="padding-left: 45px; background: #f1f5f9; border: 1px solid #e2e8f0;">
+                    </div>
+                </div>
+                <div class="form-group password-toggle">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <label for="signin-password" style="color: #374151; font-weight: 500;">Password</label>
+                        <a href="#" style="color: #1d9531; font-size: 0.875rem; text-decoration: none;">Forgot password?</a>
+                    </div>
+                    <div style="position: relative;">
+                        <i class="fas fa-lock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                        <input type="password" id="signin-password" required style="padding-left: 45px; padding-right: 45px; background: #f1f5f9; border: 1px solid #e2e8f0;">
+                        <i class="fas fa-eye" onclick="togglePassword('signin-password', this)" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #9ca3af;"></i>
+                    </div>
+                </div>
+                <button type="submit" style="width: 100%; padding: 1rem; background: #1d953b; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 500; margin-bottom: 1.5rem; cursor: pointer;">Sign In</button>
+                
+                <div style="text-align: center; margin: 1.5rem 0; color: #9ca3af;">OR</div>
+                
+                <button type="button" class="google-signin" onclick="signInWithGoogle()" style="width: 100%; padding: 1rem; background: white; border: 1px solid #e5e7eb; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; margin-bottom: 1.5rem;">
+                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" style="width: 20px; height: 20px;">
+                    <span style="color: #374151; font-weight: 500;">Continue with Google</span>
+                </button>
+                
+                <p style="text-align: center; color: #6b7280;">
+                    Don't have an account? <a href="#" onclick="switchModal('signin-modal', 'signup-modal')" style="color: #1d9537; text-decoration: none; font-weight: 500;">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signup-modal')">&times;</span>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name" style="color: #374151; font-weight: 500; margin-bottom: 0.5rem;">Full Name</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-user" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                        <input type="text" id="signup-name" required style="padding-left: 45px; background: #f1f5f9; border: 1px solid #e2e8f0;" placeholder="mwolo_cleaning_company">
+                    </div>
+                </div>
+                <div class="form-group">
+                     <label for="signup-email" style="color: #374151; font-weight: 500; margin-bottom: 0.5rem;">Email</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-envelope" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                        <input type="email" id="signup-email" required style="padding-left: 45px; background: #f1f5f9; border: 1px solid #e2e8f0;">
+                    </div>
+                </div>
+                <div class="form-group password-toggle">
+                    <label for="signup-password" style="color: #374151; font-weight: 500; margin-bottom: 0.5rem;">Password</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-lock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                        <input type="password" id="signup-password" required style="padding-left: 45px; padding-right: 45px; background: #f1f5f9; border: 1px solid #e2e8f0;">
+                        <i class="fas fa-eye" onclick="togglePassword('signup-password', this)" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #9ca3af;"></i>
+                    </div>
+                </div>
+                <div class="form-group password-toggle">
+                    <label for="signup-confirm-password" style="color: #374151; font-weight: 500; margin-bottom: 0.5rem;">Confirm Password</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-lock" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                        <input type="password" id="signup-confirm-password" required style="padding-left: 45px; padding-right: 45px; background: #f1f5f9; border: 1px solid #e2e8f0;">
+                        <i class="fas fa-eye" onclick="togglePassword('signup-confirm-password', this)" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #9ca3af;"></i>
+                    </div>
+                </div>
+                <button type="submit" style="width: 100%; padding: 1rem; background: #1d953b; color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 500; margin-bottom: 1.5rem; cursor: pointer;">Create Account</button>
+                
+                <div style="text-align: center; margin: 1.5rem 0; color: #9ca3af;">OR</div>
+                
+                <button type="button" class="google-signin" onclick="signUpWithGoogle()" style="width: 100%; padding: 1rem; background: white; border: 1px solid #e5e7eb; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; margin-bottom: 1.5rem;">
+                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" style="width: 20px; height: 20px;">
+                    <span style="color: #374151; font-weight: 500;">Continue with Google</span>
+                </button>
+                
+                <p style="text-align: center; color: #6b7280;">
+                    Already have an account? <a href="#" onclick="switchModal('signup-modal', 'signin-modal')" style="color: #1d9523; text-decoration: none; font-weight: 500;">Sign in</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Details Modal -->
+    <div id="service-details-modal" class="modal">
+        <div class="modal-content large">
+            <span class="close" onclick="closeModal('service-details-modal')">&times;</span>
+            <div id="service-details-content">
+                <!-- Service details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MWOLO CLEANING COMPANY</h3>
+                    <p>Leading provider of eco-friendly cleaning solutions committed to sustainable practices.</p>
+                    <div class="social-links" style="justify-content: flex-start;">
+                        <a href="https://wa.me/256787184507" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/mwolo_cleaning" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/mwolo_cleaning" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://facebook.com/mwolo.cleaning.company" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#" onclick="showServiceDetails('Waste Management')" style="color: var(--dark-gray); text-decoration: none;">Waste Management</a></li>
+                        <li><a href="#" onclick="showServiceDetails('General Janitorial')" style="color: var(--dark-gray); text-decoration: none;">General Janitorial</a></li>
+                        <li><a href="#" onclick="showServiceDetails('Lawn Care')" style="color: var(--dark-gray); text-decoration: none;">Lawn Care</a></li>
+                        <li><a href="#" onclick="showServiceDetails('Fumigation')" style="color: var(--dark-gray); text-decoration: none;">Fumigation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> C/O Panuna Trading Center, Soni Sub-county</p>
+                    <p><i class="fas fa-envelope"></i> P.O Box 300471, Tororo District</p>
+                    <p><i class="fas fa-phone"></i> 0787184507 / 0757638698 / 0763461020</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#" onclick="showSection('about')" style="color: var(--dark-gray); text-decoration: none;">About Us</a></li>
+                        <li><a href="#" onclick="showSection('services')" style="color: var(--dark-gray); text-decoration: none;">Services</a></li>
+                        <li><a href="#" onclick="showSection('gallery')" style="color: var(--dark-gray); text-decoration: none;">Gallery</a></li>
+                        <li><a href="#" onclick="showSection('contact')" style="color: var(--dark-gray); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MWOLO CLEANING COMPANY. All rights reserved. | Happy Spaces, Happy Faces</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Access Button -->
+    <button class="admin-access-btn" onclick="requestAdminAccess()" title="Admin Access">
+        <i class="fas fa-key"></i>
+    </button>
+
+    <script>
+        // Data storage
+        const userData = {
+            users: [],
+            subscribers: [],
+            messages: []
+        };
+
+        const adminPassword = "mwolo2024admin";
+        let isAdminLoggedIn = false;
+
+        // Company image upload function
+        function uploadCompanyImage() {
+            document.getElementById('company-image-input').click();
+        }
+
+        function handleCompanyImageUpload(input) {
+            const file = input.files[0];
+            if (file) {
+                const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+                if (!allowedTypes.includes(file.type)) {
+                    showAlert('Please select a valid image file (JPEG, PNG, GIF, or WebP)', 'error');
+                    return;
+                }
+                
+                const maxSize = 5 * 1024 * 1024;
+                if (file.size > maxSize) {
+                    showAlert('File size must be less than 5MB', 'error');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imageDisplay = document.getElementById('company-image-display');
+                    imageDisplay.innerHTML = `<img src="${e.target.result}" alt="Company Image" class="company-image">`;
+                    showAlert('Company image uploaded successfully!', 'success');
+                };
+                reader.onerror = function() {
+                    showAlert('Error reading file. Please try again.', 'error');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Admin access function
+        function requestAdminAccess() {
+            if (isAdminLoggedIn) {
+                showSection('admin');
+                showAlert('Welcome back, Admin!', 'success');
+            } else {
+                const password = prompt('Enter admin password:');
+                if (password === adminPassword) {
+                    isAdminLoggedIn = true;
+                    showSection('admin');
+                    showAlert('Admin access granted successfully!', 'success');
+                } else if (password !== null) {
+                    showAlert('Invalid admin password. Access denied!', 'error');
+                }
+            }
+        }
+
+        // Google Sign In functions
+        function signInWithGoogle() {
+            showAlert('Google Sign-In would be configured with your Google API credentials in production', 'success');
+            closeModal('signin-modal');
+        }
+
+        function signUpWithGoogle() {
+            showAlert('Google Sign-Up would be configured with your Google API credentials in production', 'success');
+            closeModal('signup-modal');
+        }
+
+        // Password toggle function
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Service details data
+        const serviceDetails = {
+            'Waste Management': {
+                title: 'Waste Management Services',
+                description: 'Comprehensive waste collection, sorting, and disposal services following environmental guidelines.',
+                features: [
+                    'Residential waste collection',
+                    'Commercial waste management', 
+                    'Recycling programs',
+                    'Hazardous waste disposal',
+                    'Composting services',
+                    'Waste audit and consulting',
+                    'Emergency cleanup services'
+                ]
+            },
+            'General Janitorial': {
+                title: 'General Janitorial Services',
+                description: 'Complete cleaning solutions for offices, buildings, and commercial spaces.',
+                features: [
+                    'Daily office cleaning',
+                    'Floor maintenance and polishing',
+                    'Window cleaning',
+                    'Restroom sanitization',
+                    'Carpet cleaning',
+                    'Deep cleaning services',
+                    'Post-construction cleanup'
+                ]
+            },
+            'Lawn Care': {
+                title: 'Professional Lawn Care Services',
+                description: 'Expert landscaping and lawn maintenance services for beautiful outdoor spaces.',
+                features: [
+                    'Grass cutting and trimming',
+                    'Garden design and installation',
+                    'Tree pruning and maintenance',
+                    'Fertilization programs',
+                    'Weed control',
+                    'Irrigation system maintenance',
+                    'Seasonal landscape maintenance'
+                ]
+            },
+            'Fumigation': {
+                title: 'Safe Pest Control & Fumigation',
+                description: 'Effective pest control solutions for residential and commercial properties.',
+                features: [
+                    'Termite treatment',
+                    'Rodent control',
+                    'Insect elimination',
+                    'Preventive pest management',
+                    'Safe chemical application',
+                    'Post-treatment monitoring',
+                    'Eco-friendly pest solutions'
+                ]
+            },
+            'General Supply': {
+                title: 'Cleaning & Maintenance Supplies',
+                description: 'Quality cleaning materials, equipment, and maintenance products.',
+                features: [
+                    'Cleaning chemicals and detergents',
+                    'Professional cleaning equipment',
+                    'Safety gear and protective equipment',
+                    'Maintenance tools and supplies',
+                    'Eco-friendly cleaning products',
+                    'Bulk supply arrangements',
+                    'Product consultation and recommendations'
+                ]
+            },
+            'Compound Maintenance': {
+                title: 'Complete Compound Maintenance',
+                description: 'Comprehensive maintenance services for residential and commercial compounds.',
+                features: [
+                    'Building exterior cleaning',
+                    'Driveway and walkway maintenance',
+                    'Parking lot cleaning and marking',
+                    'Fence and gate maintenance',
+                    'Outdoor furniture cleaning',
+                    'Drainage system maintenance',
+                    'General repairs and upkeep'
+                ]
+            },
+            'General Consultancy': {
+                title: 'Professional Cleaning Consultancy',
+                description: 'Expert advice on cleaning protocols, environmental compliance, and maintenance strategies.',
+                features: [
+                    'Cleaning protocol development',
+                    'Environmental compliance consulting',
+                    'Staff training programs',
+                    'Quality assurance systems',
+                    'Cost optimization strategies',
+                    'Equipment and product recommendations',
+                    'Maintenance scheduling and planning'
+                ]
+            },
+            'Computer Services': {
+                title: 'IT Support & Computer Services',
+                description: 'Comprehensive IT support, computer maintenance, and technology consulting services.',
+                features: [
+                    'Computer repair and maintenance',
+                    'Software installation and updates',
+                    'Network setup and troubleshooting',
+                    'Data backup and recovery',
+                    'Hardware upgrades',
+                    'IT consulting and planning',
+                    'Remote technical support'
+                ]
+            },
+            'Labour Management': {
+                title: 'Professional Workforce Solutions',
+                description: 'Expert workforce management and staffing solutions for various industries.',
+                features: [
+                    'Temporary staffing solutions',
+                    'Permanent placement services',
+                    'Staff training and development',
+                    'Workforce planning and optimization',
+                    'Performance management systems',
+                    'Compliance and safety training',
+                    'Payroll and HR administration'
+                ]
+            }
+        };
+
+        // Show section function
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function switchModal(currentModal, newModal) {
+            closeModal(currentModal);
+            openModal(newModal);
+        }
+
+        // Service details function
+        function showServiceDetails(serviceName) {
+            const service = serviceDetails[serviceName];
+            if (service) {
+                const content = `
+                    <h2 style="color: var(--primary-blue); margin-bottom: 1rem;">${service.title}</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--dark-gray);">${service.description}</p>
+                    <div class="service-details" style="background: white; padding: 2rem; border-radius: 15px; margin-top: 1rem;">
+                        <h3 style="color: var(--primary-green); margin-bottom: 1rem;">What's Included:</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            ${service.features.map(feature => `<li style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; align-items: center;"><span style="color: var(--primary-green); font-weight: bold; margin-right: 1rem;">✓</span>${feature}</li>`).join('')}
+                        </ul>
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <button class="btn btn-primary" onclick="closeModal('service-details-modal'); showSection('contact');">
+                                Get a Quote
+                            </button>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('service-details-content').innerHTML = content;
+                openModal('service-details-modal');
+            }
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email && email.includes('@')) {
+                const subscriber = {
+                    email: email,
+                    date: new Date().toLocaleDateString()
+                };
+                userData.subscribers.push(subscriber);
+                updateStats();
+                updateSubscribersList();
+                showAlert('Thank you for subscribing to our newsletter!', 'success');
+                document.getElementById('newsletter-email').value = '';
+            } else {
+                showAlert('Please enter a valid email address.', 'error');
+            }
+        }
+
+        // Gallery function
+        function addMoreGalleryItems() {
+            showAlert('Gallery expansion feature would be implemented here in production', 'success');
+        }
+
+        // Alert function with improved styling
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            
+            // Enhanced styling for better visibility
+            const bgColor = type === 'success' ? 'rgba(22, 163, 74, 0.95)' : 'rgba(239, 68, 68, 0.95)';
+            const borderColor = type === 'success' ? 'var(--primary-green)' : '#dc2626';
+            const textColor = 'white';
+            
+            alertDiv.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}" style="font-size: 1.2rem;"></i>
+                    <span style="font-weight: 500;">${message}</span>
+                </div>
+            `;
+            
+            // Apply enhanced styles
+            Object.assign(alertDiv.style, {
+                position: 'fixed',
+                top: '100px',
+                right: '20px',
+                zIndex: '3000',
+                minWidth: '320px',
+                maxWidth: '500px',
+                padding: '1rem 1.5rem',
+                borderRadius: '12px',
+                background: bgColor,
+                color: textColor,
+                border: `2px solid ${borderColor}`,
+                boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+                backdropFilter: 'blur(10px)',
+                animation: 'slideInRight 0.3s ease',
+                cursor: 'pointer'
+            });
+            
+            // Add click to dismiss
+            alertDiv.onclick = () => {
+                alertDiv.style.opacity = '0';
+                alertDiv.style.transform = 'translateX(100%)';
+                setTimeout(() => alertDiv.remove(), 300);
+            };
+            
+            document.body.appendChild(alertDiv);
+            
+            // Auto dismiss after 5 seconds
+            setTimeout(() => {
+                if (alertDiv && alertDiv.parentNode) {
+                    alertDiv.style.opacity = '0';
+                    alertDiv.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        if (alertDiv.parentNode) alertDiv.remove();
+                    }, 300);
+                }
+            }, 5000);
+        }
+
+        // Admin functions
+        function showAdminPanel(panelId) {
+            // Hide all admin panels
+            const panels = document.querySelectorAll('.admin-panel-content');
+            panels.forEach(panel => panel.style.display = 'none');
+            
+            // Remove active class from sidebar links
+            const sidebarLinks = document.querySelectorAll('.admin-sidebar a');
+            sidebarLinks.forEach(link => link.classList.remove('active'));
+            
+            // Show selected panel
+            document.getElementById(panelId).style.display = 'block';
+            
+            // Add active class to clicked link
+            event.target.classList.add('active');
+
+            // Update data displays
+            if (panelId === 'user-management') {
+                updateUsersList();
+                updateSubscribersList();
+            } else if (panelId === 'messages-manager') {
+                updateMessagesList();
+            }
+        }
+
+        // Update functions
+        function updateUsersList() {
+            const usersList = document.getElementById('users-list');
+            if (userData.users.length === 0) {
+                usersList.innerHTML = '<p style="color: var(--dark-gray); font-style: italic;">No users registered yet.</p>';
+            } else {
+                usersList.innerHTML = userData.users.map((user, index) => `
+                    <div style="background: #f8f9fa; padding: 1rem; margin-bottom: 0.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>${user.name}</strong><br>
+                            <span style="color: var(--dark-gray);">${user.email} - Joined: ${user.date}</span>
+                        </div>
+                        <button onclick="deleteUser(${index})" style="background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateSubscribersList() {
+            const subscribersList = document.getElementById('subscribers-list');
+            if (userData.subscribers.length === 0) {
+                subscribersList.innerHTML = '<p style="color: var(--dark-gray); font-style: italic;">No subscribers yet.</p>';
+            } else {
+                subscribersList.innerHTML = userData.subscribers.map((subscriber, index) => `
+                    <div style="background: #f8f9fa; padding: 1rem; margin-bottom: 0.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>${subscriber.email}</strong><br>
+                            <span style="color: var(--dark-gray);">Subscribed: ${subscriber.date}</span>
+                        </div>
+                        <button onclick="deleteSubscriber(${index})" style="background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateMessagesList() {
+            const messagesList = document.getElementById('messages-list');
+            if (userData.messages.length === 0) {
+                messagesList.innerHTML = '<p style="color: var(--dark-gray); font-style: italic;">No messages received yet.</p>';
+            } else {
+                messagesList.innerHTML = userData.messages.map((message, index) => `
+                    <div style="background: #f8f9fa; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; border-left: 4px solid var(--primary-blue); position: relative;">
+                        <button onclick="deleteMessage(${index})" style="position: absolute; top: 1rem; right: 1rem; background: #ef4444; color: white; border: none; padding: 0.5rem; border-radius: 4px; cursor: pointer; width: 35px; height: 35px;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-right: 50px;">
+                            <strong>${message.name}</strong>
+                            <span style="color: var(--dark-gray); font-size: 0.9rem;">${message.date}</span>
+                        </div>
+                        <p style="color: var(--dark-gray); margin-bottom: 0.5rem;">${message.email}</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>Service:</strong> ${message.service}</p>
+                        <p style="background: white; padding: 1rem; border-radius: 6px; margin-top: 1rem;">${message.message}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Delete functions
+        function deleteUser(index) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                userData.users.splice(index, 1);
+                updateUsersList();
+                updateStats();
+                showAlert('User deleted successfully!', 'success');
+            }
+        }
+
+        function deleteSubscriber(index) {
+            if (confirm('Are you sure you want to delete this subscriber?')) {
+                userData.subscribers.splice(index, 1);
+                updateSubscribersList();
+                updateStats();
+                showAlert('Subscriber deleted successfully!', 'success');
+            }
+        }
+
+        function deleteMessage(index) {
+            if (confirm('Are you sure you want to delete this message?')) {
+                userData.messages.splice(index, 1);
+                updateMessagesList();
+                updateStats();
+                showAlert('Message deleted successfully!', 'success');
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('total-users').textContent = userData.users.length;
+            document.getElementById('total-subscribers').textContent = userData.subscribers.length;
+            document.getElementById('total-messages').textContent = userData.messages.length;
+        }
+
+        // Form submissions
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const service = document.getElementById('contact-service').value;
+            const message = document.getElementById('contact-message').value;
+            
+            if (name && email && service && message) {
+                const contactMessage = {
+                    name: name,
+                    email: email,
+                    service: service,
+                    message: message,
+                    date: new Date().toLocaleDateString()
+                };
+                
+                userData.messages.push(contactMessage);
+                updateStats();
+                
+                showAlert('Thank you for your message! We will contact you soon.', 'success');
+                this.reset();
+            } else {
+                showAlert('Please fill in all required fields.', 'error');
+            }
+        });
+
+        document.getElementById('signin-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('signin-email').value;
+            const password = document.getElementById('signin-password').value;
+            
+            if (email && password) {
+                showAlert('Sign in successful! (Demo mode)', 'success');
+                closeModal('signin-modal');
+                this.reset();
+            }
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                showAlert('Passwords do not match!', 'error');
+                return;
+            }
+            
+            if (name && email && password) {
+                const newUser = {
+                    name: name,
+                    email: email,
+                    date: new Date().toLocaleDateString()
+                };
+                
+                userData.users.push(newUser);
+                updateStats();
+                
+                showAlert('Account created successfully! Welcome to MWOLO Cleaning!', 'success');
+                closeModal('signup-modal');
+                this.reset();
+            }
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+            updateStats();
+            
+            console.log('%c MWOLO Cleaning Company Website Loaded Successfully! ', 'background: linear-gradient(135deg, #2563eb, #16a34a); color: white; padding: 10px; border-radius: 5px; font-weight: bold;');
+        });
+    </script>
+</body>
+</html>
